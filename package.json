@@ -1,0 +1,34 @@
+{
+  "name": "dora-eras",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:artifact": "VITE_HASH_ROUTER=1 vite build --mode artifact --outDir dist-artifact",
+    "preview": "vite preview",
+    "test:admin": "VITE_HASH_ROUTER=1 vite build --config test/vite.test.config.js && vite preview --outDir dist-test --port 4174"
+  },
+  "dependencies": {
+    "@fontsource/caveat": "^5.3.0",
+    "@fontsource/dela-gothic-one": "^5.3.0",
+    "@fontsource/great-vibes": "^5.3.0",
+    "@fontsource/neucha": "^5.3.0",
+    "@fontsource/onest": "^5.3.1",
+    "@fontsource/playfair-display": "^5.3.0",
+    "@fontsource/rubik-dirt": "^5.3.0",
+    "@fontsource/unbounded": "^5.3.0",
+    "@supabase/supabase-js": "2.45.4",
+    "gsap": "3.12.5",
+    "lenis": "1.1.13",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.26.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.2",
+    "vite": "5.4.8",
+    "vite-plugin-singlefile": "2.0.2"
+  }
+}

@@ -1,0 +1,126 @@
+.h-wrap { height: 100vh; height: 100dvh; overflow: hidden; }
+/* телефоны: стабильная высота, не зависящая от прячущейся адресной строки iOS */
+@media (hover: none) and (pointer: coarse) { .h-wrap { height: 100vh; height: 100svh; } .cover-shine { display: none; } .cover-logo .cover-jelly img { filter: none; } .cover-logo .cover-tilt { will-change: auto; transform-style: flat; } }
+.h-track { display: flex; height: 100%; width: max-content; will-change: transform; }
+.panel {
+  position: relative; flex: none; width: 100vw; height: 100%;
+  padding: calc(env(safe-area-inset-top, 0px) + 84px) var(--pad) calc(env(safe-area-inset-bottom, 0px) + 80px);
+  overflow: hidden;
+}
+.era-kind { display: block; font-size: 15px; font-weight: 500; opacity: .85; margin-bottom: 14px; }
+.era-text { max-width: 52ch; margin: 0; font-size: clamp(16px, 1.25vw, 19px); line-height: 1.55; }
+
+/* обложка */
+.panel--cover { text-align: center; color: var(--ink); display: grid; place-content: center; justify-items: center; }
+.cover-word { margin: 0; display: flex; font-size: clamp(120px, 27vw, 440px); line-height: .9; letter-spacing: -0.02em; color: #000; font-weight: 400; }
+.cover-l { display: inline-block; min-width: .5em; text-align: center; transition: color .4s; will-change: transform; --near: 0; filter: drop-shadow(0 0 calc(var(--near) * 22px) rgba(255, 61, 139, calc(var(--near) * .9))); }
+.cover-l.f-ui { font-weight: 800; }
+.cover-l.f-spray { color: var(--pink); }
+.cover-l.f-bubble { color: var(--cherry); }
+.cover-l.f-miss { color: #3b0f35; }
+.cover-l.f-love { color: var(--wine); }
+.cover-l.f-now { color: var(--night); }
+.cover-l.f-hand { color: var(--ink); }
+
+/* пролог: тетрадь */
+
+/* младшая сестра: ксерокс и скотч */
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* кьют-рок: пузыри и сердечки */
+
+/* MISS: хром и лента */
+@keyframes chrome { to { background-position: 100% 0; } }
+
+/* LOVESONGS: звонок маме */
+@keyframes ring { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,180,107,.6) } 60% { box-shadow: 0 0 0 22px rgba(255,180,107,0) } }
+
+/* сейчас: снег */
+
+/* финал */
+
+/* вырезки на эрах */
+
+/* телефон: та же горизонтальная лента, но без кассеты; вырезки прячем, чтобы не закрывали текст */
+@media (max-width: 860px) {
+  .panel { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 80px); }
+}
+
+/* напоминалка про скролл */
+.scroll-hint {
+  position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 26px); z-index: 16;
+  transform: translate(-50%, 10px); display: flex; align-items: center; gap: 8px;
+  padding: 6px 14px 6px 8px; border-radius: 99px; background: rgba(20, 8, 30, .38); color: rgba(255, 255, 255, .92);
+  font-size: 13px; font-weight: 600; white-space: nowrap; transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); border: 1px solid rgba(255, 255, 255, .22); opacity: 0; pointer-events: none;
+}
+.scroll-hint.is-on { opacity: 1; transform: translate(-50%, 0); }
+.scroll-hint-ico { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.scroll-hint-wheel { animation: wheel 1.6s ease-in-out infinite; }
+.scroll-hint-arrow { stroke: #FFB3D9; animation: nudge 1.6s ease-in-out infinite; }
+@keyframes wheel { 0%, 100% { transform: translateY(0); opacity: 1 } 60% { transform: translateY(4px); opacity: .2 } }
+@keyframes nudge { 0%, 100% { transform: translateX(0) } 60% { transform: translateX(4px) } }
+@media (max-width: 860px) { .scroll-hint { bottom: calc(env(safe-area-inset-bottom, 0px) + 22px); font-size: 12px; } }
+
+/* кнопка вырезки нужна только на телефоне */
+
+/* телефон: вырезка выглядывает справа, тап выдвигает */
+@media (max-width: 860px) {
+  /* у каждой главы своя высота, чтобы попасть в свободное место */
+}
+
+/* обложка: буквы краснеют, когда курсор рядом */
+
+/* пролог: зачёркивание от руки */
+
+/* младшая сестра: значок теперь кнопка */
+
+/* кьют-рок: буквы переворачиваются */
+
+/* звонок: смена состояний, волна голоса, курсор печати */
+@keyframes stageIn { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: none } }
+@keyframes wave { 0%, 100% { height: 18% } 50% { height: 100% } }
+@keyframes caret { 50% { opacity: 0 } }
+
+/* сейчас: синглы-ссылки с инеем */
+
+/* размеры фото на десктопе */
+
+/* финал: только фраза, соцсети и фотобудка */
+
+/* ===== главный экран: живой логотип ===== */
+.cover-logo-wrap { margin: 0; width: min(56vw, 760px); line-height: 0; }
+.cover-logo { display: block; width: 100%; padding: 0; margin: 0; border: 0; background: none; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.cover-logo:focus-visible { outline: 3px solid #FF3D8B; outline-offset: 10px; border-radius: 30px; }
+.cover-float { display: block; perspective: 1100px; animation: logoFloat 6s ease-in-out infinite; }
+@keyframes logoFloat { 0%, 100% { translate: 0 0; rotate: -1.2deg } 50% { translate: 0 -14px; rotate: 1.2deg } }
+.cover-tilt { display: block; transform-style: preserve-3d; will-change: transform; }
+.cover-jelly { position: relative; display: block; transform-origin: 50% 88%; }
+.cover-jelly img { display: block; width: 100%; height: auto; filter: drop-shadow(0 26px 34px rgba(224, 16, 58, .28)); user-select: none; -webkit-user-drag: none; }
+/* блик по стеклу: маска в форме самого логотипа, поэтому свет ложится только на буквы и звёзды */
+.cover-shine { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
+  -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  background-image: linear-gradient(105deg, transparent 42%, rgba(255,255,255,.6) 50%, transparent 58%);
+  background-size: 260% 100%; background-position: 130% 0; animation: logoSweep 6s 1.6s ease-in-out infinite; }
+@keyframes logoSweep { 0% { background-position: 130% 0 } 35%, 100% { background-position: -30% 0 } }
+.cover-shine::before { content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity .35s;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 30%), rgba(255,255,255,.55), rgba(255,255,255,0) 24%); }
+.cover-logo:hover .cover-shine::before { opacity: 1; }
+.cover-glint { position: absolute; width: 3.4%; aspect-ratio: 1; translate: -50% -50%; pointer-events: none; opacity: 0;
+  background: #fff; clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 12px #FFB3D9); animation: glint 3.3s ease-in-out infinite; }
+@keyframes glint { 0%, 68%, 100% { opacity: 0; scale: .2; rotate: 0deg } 80% { opacity: 1; scale: 1.15; rotate: 45deg } 90% { opacity: 0; scale: .4; rotate: 90deg } }
+@media (max-width: 760px) { .cover-logo-wrap { width: 88vw; } }
+@media (prefers-reduced-motion: reduce) { .cover-float, .cover-shine, .cover-glint { animation: none !important; } }
+
+/* пролог: заголовки маркером Caveat, текст живым почерком Neucha */
+/* кьют-рок: широкий Unbounded */
+
+/* ===== премиальная типографика эпох ===== */
+.ticket-home { font-family: 'Great Vibes', cursive; font-size: 30px; }
+@media (max-width: 760px) { .ticket-home { font-size: 22px; } }
+
+/* телефон: справа от текста пролога свободная полоса под выглядывающее фото */
+/* низкие узкие экраны (iPhone SE 1): пролог целиком, вместе с кнопкой */
+html.tape-snap { scroll-snap-type: y mandatory; }
+.tape-snaps { position: absolute; top: 0; left: 0; width: 1px; pointer-events: none; visibility: hidden; }
+.tape-snaps > i { position: absolute; left: 0; width: 1px; height: 1px; scroll-snap-align: start; scroll-snap-stop: always; }
